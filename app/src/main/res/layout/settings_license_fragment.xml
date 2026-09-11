@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_main">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/licence_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardBackgroundColor="@color/card_bg"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/device_licencing_card"
+                        android:textColor="@color/misooGreen"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center"
+                        android:text="Click 'Get Licence' to licence this device. Licences will display in the boxes below."
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp" />
+
+                    <GridLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="16dp"
+                        android:columnCount="5"
+                        android:rowCount="1">
+
+                        <EditText
+                            android:id="@+id/licence_part_one"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/shape_for_numberbox"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:textColor="@color/text_primary"
+                            android:textSize="14sp" />
+
+                        <EditText
+                            android:id="@+id/licence_part_two"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/shape_for_numberbox"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:textColor="@color/text_primary"
+                            android:textSize="14sp" />
+
+                        <EditText
+                            android:id="@+id/licence_part_three"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/shape_for_numberbox"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:textColor="@color/text_primary"
+                            android:textSize="14sp" />
+
+                        <EditText
+                            android:id="@+id/licence_part_four"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/shape_for_numberbox"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:textColor="@color/text_primary"
+                            android:textSize="14sp" />
+
+                        <EditText
+                            android:id="@+id/licence_part_five"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/shape_for_numberbox"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:textColor="@color/text_primary"
+                            android:textSize="14sp" />
+
+                    </GridLayout>
+
+                    <GridLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:columnCount="2"
+                        android:rowCount="1">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1"
+                            android:layout_marginEnd="6dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="From"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="14sp" />
+
+                            <EditText
+                                android:id="@+id/licence_Start_date"
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:layout_marginTop="4dp"
+                                android:background="@drawable/shape_for_numberbox"
+                                android:gravity="center"
+                                android:inputType="number"
+                                android:textColor="@color/text_primary"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1"
+                            android:layout_marginStart="6dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="To"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="14sp" />
+
+                            <EditText
+                                android:id="@+id/licence_end_date"
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:layout_marginTop="4dp"
+                                android:background="@drawable/shape_for_numberbox"
+                                android:gravity="center"
+                                android:inputType="number"
+                                android:textColor="@color/text_primary"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                    </GridLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/licence_card_buttom"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginVertical="8dp"
+                android:backgroundTint="@color/misooGreen"
+                android:text="@string/getlicence_text"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:cornerRadius="10dp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/appliance_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardBackgroundColor="@color/card_bg"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/device_appliance_number_card"
+                        android:textColor="@color/misooGreen"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center"
+                        android:text="Click 'Get Appliance Number' to fetch the appliance number for this device."
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/appliance_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/shape_for_numberbox"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:textColor="@color/text_primary"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/appliance_card_button"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginVertical="8dp"
+                android:backgroundTint="@color/misooGreen"
+                android:text="@string/get_deviceappliancenumber_text"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:cornerRadius="10dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

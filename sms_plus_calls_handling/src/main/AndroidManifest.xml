@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="misoo_call_center"
+    tools:ignore="MissingLeanbackLauncher">
+
+<uses-feature
+    android:name="android.software.leanback"
+    android:required="true" />
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+<uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+<uses-permission android:name="android.permission.RECEIVE_SMS" />
+<uses-permission android:name="android.permission.SEND_SMS" />
+<uses-permission android:name="android.permission.READ_SMS" />
+<uses-permission android:name="android.permission.READ_CONTACTS" />
+
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.RECORD_AUDIO" />
+<uses-permission android:name="android.permission.STORAGE" />
+<uses-permission android:name="android.permission.CAPTURE_AUDIO_OUTPUT" />
+
+<application
+    android:allowBackup="true"
+    android:launchMode="singleTop"
+    android:supportsRtl="true">
+    <activity android:name="com.example.dotpesa_new_dec_2022.call_sms_db_modules.PermissionsActivity"
+        android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.VIEW" />
+        </intent-filter>
+    </activity>
+
+    <receiver android:name="com.example.dotpesa_new_dec_2022.call_sms_db_modules.call.PhoneCallReceiver"
+        android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.PHONE_STATE" />
+        </intent-filter>
+        <intent-filter>
+            <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
+        </intent-filter>
+    </receiver>
+
+    <receiver
+        android:name="com.example.dotpesa_new_dec_2022.call_sms_db_modules.sms.SmsReceiver"
+        android:permission="android.permission.BROADCAST_SMS"
+        android:exported="true">
+        <intent-filter>
+            <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+        </intent-filter>
+    </receiver>
+    <receiver
+        android:name="com.example.dotpesa_new_dec_2022.call_sms_db_modules.call.CallDeviceAdmin"
+        android:permission="android.permission.BIND_DEVICE_ADMIN"
+        android:exported="true">
+        <meta-data
+            android:name="android.app.device_admin"
+            android:resource="@xml/call_admin" />
+
+        <intent-filter>
+            <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+            <action android:name="android.app.action.DEVICE_ADMIN_DISABLED" />
+            <action android:name="android.app.action.DEVICE_ADMIN_DISABLE_REQUESTED" />
+            <action android:name="android.intent.action.BOOT_COMPLETED" />
+
+            <category android:name="android.intent.category.HOME" />
+        </intent-filter>
+    </receiver>
+
+    <receiver android:name="com.example.dotpesa_new_dec_2022.call_sms_db_modules.reciever.RestartReceiver"
+        android:exported="true">
+        <intent-filter>
+            <action android:name="InfiniteService" />
+        </intent-filter>
+    </receiver>
+
+    <activity android:name="com.example.dotpesa_new_dec_2022.call_sms_db_modules.DeviceAdminActivity"
+        android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <action android:name="android.intent.action.VIEW" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+</application>
+</manifest>
