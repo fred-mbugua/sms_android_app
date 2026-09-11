@@ -3,6 +3,7 @@ package com.example.dotpesa_new_dec_2022;
 import static com.misoo.framework.ApplicationSessionBean.APPLICATION_MISOO_CENTER_HTTP_CLIENT_COOKIE;
 
 import android.app.ActivityOptions;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
@@ -18,10 +19,16 @@ import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.example.dotpesa_new_dec_2022.call_sms_db_modules.recyclerviewadapter.MessagesModel;
 import com.example.dotpesa_new_dec_2022.call_sms_db_modules.recyclerviewadapter.database.DBHelper;
 import com.example.dotpesa_new_dec_2022.call_sms_db_modules.recyclerviewadapter.database.SMSModelSMSdetails;
+import com.example.dotpesa_new_dec_2022.core.App;
+import com.example.dotpesa_new_dec_2022.core.SmsService;
+import com.example.dotpesa_new_dec_2022.utilities.NodeSmsSyncQueue;
+import com.example.dotpesa_new_dec_2022.utilities.PermissionManager;
+import com.example.dotpesa_new_dec_2022.utilities.SmsInboxImporter;
 
 import org.apache.hc.client5.http.cookie.BasicCookieStore;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
@@ -109,6 +116,14 @@ public class MainActivity extends AppCompatActivity {
     public static Boolean LICENCE_CUSTOMER_LOGIN_REMEMBER_ME = Boolean.FALSE;
     public static DBHelper DB_HELPER;
 
+    public static synchronized DBHelper getDbHelper(Context context) {
+        if (DB_HELPER == null) {
+            Context ctx = context != null ? context.getApplicationContext() : App.getInstance();
+            DB_HELPER = new DBHelper(ctx);
+        }
+        return DB_HELPER;
+    }
+
 
     public static CloseableHttpClient APPLICATION_LOCAL_MISOO_PORTAL_HTTP_CLIENT = getNewHttpClient();
 
@@ -185,7 +200,21 @@ public class MainActivity extends AppCompatActivity {
         APPLICATION_LOCAL_MISOO_AUTO_SENDING_SMS = Boolean.valueOf(SHAREDPREFERENCES.getString("local_misoo_auto_send_sms", ""));
         APPLICATION_LOCAL_MISOO_ONLY_RECIEVE_FROM = SHAREDPREFERENCES.getString("local_misoo_only_recieve_from", "");
 
-        DB_HELPER = new DBHelper(this);
+        DB_HELPER = getDbHelper(this);
+
+        if (PermissionManager.hasAllPermissions(this)) {
+            SmsInboxImporter.importDeviceSmsMessagesAsync(this);
+            try {
+                Intent serviceIntent = new Intent(this, SmsService.class);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    ContextCompat.startForegroundService(this, serviceIntent);
+                } else {
+                    startService(serviceIntent);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
 
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -256,7 +285,10 @@ public class MainActivity extends AppCompatActivity {
     public static void saveSMSMessagesToDisk(MessagesModel rawSms){
         SMSModelSMSdetails sms = new SMSModelSMSdetails(rawSms);
         try {
-            DB_HELPER.save(sms);
+            getDbHelper(App.getInstance()).save(sms);
+            if (App.getInstance() != null) {
+                NodeSmsSyncQueue.dispatchUnsyncedMessages(App.getInstance());
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -266,7 +298,7 @@ public class MainActivity extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.O)
     public static void listOfAllSMSMessagesInSQLiteDB(){
         try{
-            INBOX_MESSAGE_LIST = DB_HELPER.allDBUnsyncedMessages();
+            INBOX_MESSAGE_LIST = getDbHelper(App.getInstance()).allDBUnsyncedMessages();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -275,7 +307,7 @@ public class MainActivity extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.O)
     public static void updateSMSMessageIncomingInDisk(SMSModelSMSdetails sms){
         try {
-            INBOX_MESSAGE_LIST = DB_HELPER.updateIncomingSMSisSynchronized(sms);
+            INBOX_MESSAGE_LIST = getDbHelper(App.getInstance()).updateIncomingSMSisSynchronized(sms);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -295,6 +327,9 @@ public class MainActivity extends AppCompatActivity {
                 UnsynchedInboxFragment unsynchedInboxFragment = new UnsynchedInboxFragment();
                 System.out.println("Start of auto sending");
                 unsynchedInboxFragment.autoLoadSMSAndPushToPOS();
+                if (App.getInstance() != null) {
+                    NodeSmsSyncQueue.dispatchUnsyncedMessages(App.getInstance());
+                }
                 handler.postDelayed(this, delay);
 
             }

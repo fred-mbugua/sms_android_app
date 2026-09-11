@@ -2,8 +2,7 @@ package com.example.dotpesa_new_dec_2022.call_sms_db_modules.recyclerviewadapter
 
 public class Constants {
 
-
-    //COLUMNS
+    // COLUMNS - SMS
     public static final String SMS_MESSAGE_SERIAL = "sms_message_serial";
     public static final String SMS_TIMESTAMP = "sms_timestamp";
     public static final String SMS_MESSAGE_BODY = "sms_message_body";
@@ -21,10 +20,47 @@ public class Constants {
     public static final String SMS_MESSAGE_SYNCHRONIZED_DATE = "sms_message_synchronized_date";
     public static final String SMS_MESSAGE_IS_READ = "sms_message_is_read";
 
+    // COLUMNS - C2B TRANSACTIONS
+    public static final String C2B_ID = "id";
+    public static final String C2B_TRANS_ID = "trans_id";
+    public static final String C2B_TRANS_TIME = "trans_time";
+    public static final String C2B_AMOUNT = "amount";
+    public static final String C2B_BUSINESS_SHORTCODE = "business_shortcode";
+    public static final String C2B_BILL_REF_NUMBER = "bill_ref_number";
+    public static final String C2B_MSISDN = "msisdn";
+    public static final String C2B_FIRST_NAME = "first_name";
+    public static final String C2B_MIDDLE_NAME = "middle_name";
+    public static final String C2B_LAST_NAME = "last_name";
+    public static final String C2B_CREATED_AT = "created_at";
+    public static final String C2B_TRANS_TIME_EAT = "trans_time_eat";
+    public static final String C2B_TRANS_TIME_FORMATTED = "trans_time_formatted";
+
+    // COLUMNS - PUSHED SMS TRANSACTIONS
+    public static final String PUSHED_SMS_ID = "id";
+    public static final String PUSHED_SMS_SERIAL = "sms_serial";
+    public static final String PUSHED_SMS_SENDER = "sender";
+    public static final String PUSHED_SMS_MESSAGE = "message";
+    public static final String PUSHED_SMS_TIMESTAMP = "timestamp";
+    public static final String PUSHED_SMS_SERVICE_CENTER = "service_center";
+    public static final String PUSHED_SMS_CREATED_AT = "created_at";
+    public static final String PUSHED_SMS_STATUS = "sms_message_status";
+    public static final String PUSHED_SMS_STATUS_ON_SIM = "sms_message_status_on_sim";
+    public static final String PUSHED_SMS_PDU = "sms_message_pdu";
+    public static final String PUSHED_SMS_PROTOCOL_IDENTIFIER = "sms_protocol_identifier";
+    public static final String PUSHED_SMS_USER_DATA = "sms_message_user_data";
+    public static final String PUSHED_SMS_IS_STATUS_REPORT = "sms_is_status_report";
+    public static final String PUSHED_SMS_IS_MWI_MESSAGE = "sms_is_mwi_message";
+    public static final String PUSHED_SMS_READ_DATE = "sms_message_read_date";
+    public static final String PUSHED_SMS_IS_SYNCHRONIZED = "sms_is_message_synchronized";
+    public static final String PUSHED_SMS_SYNCHRONIZED_DATE = "sms_message_synchronized_date";
+    public static final String PUSHED_SMS_MODEM_NAME = "modem_name";
+
     // DATABASE PROPERTIES
     public static final String DATABASE_NAME = "dotpesa_sms_managemnt";
     public static final String INCOMING_TABLE_NAME = "dotpesa_sms_incoming_messages";
-    public static final int DATABASE_VERSION = '1';
+    public static final String C2B_TABLE_NAME = "c2b_transactions";
+    public static final String PUSHED_SMS_TABLE_NAME = "pushed_sms_transactions";
+    public static final int DATABASE_VERSION = 4;
 
     public static final String CREATE_TABLE_INCOMING =
             "CREATE TABLE " + INCOMING_TABLE_NAME + "("
@@ -43,5 +79,49 @@ public class Constants {
                     + SMS_MESSAGE_READ_DATE + " DATETIME default CURRENT_TIMESTAMP,"
                     + SMS_IS_MESSAGE_SYNCHRONIZED + " BOOLEAN default 'FALSE',"
                     + SMS_MESSAGE_SYNCHRONIZED_DATE + " DATETIME default null"
+                    + ")";
+
+    public static final String C2B_EXTRA_NOTE = "extra_note";
+    public static final String C2B_EXTRA_CATEGORY = "extra_category";
+
+    public static final String CREATE_TABLE_C2B =
+            "CREATE TABLE IF NOT EXISTS " + C2B_TABLE_NAME + "("
+                    + C2B_ID + " TEXT PRIMARY KEY,"
+                    + C2B_TRANS_ID + " TEXT,"
+                    + C2B_TRANS_TIME + " TEXT,"
+                    + C2B_AMOUNT + " REAL,"
+                    + C2B_BUSINESS_SHORTCODE + " TEXT,"
+                    + C2B_BILL_REF_NUMBER + " TEXT,"
+                    + C2B_MSISDN + " TEXT,"
+                    + C2B_FIRST_NAME + " TEXT,"
+                    + C2B_MIDDLE_NAME + " TEXT,"
+                    + C2B_LAST_NAME + " TEXT,"
+                    + C2B_EXTRA_NOTE + " TEXT,"
+                    + C2B_EXTRA_CATEGORY + " TEXT,"
+                    + C2B_CREATED_AT + " TEXT,"
+                    + C2B_TRANS_TIME_EAT + " TEXT,"
+                    + C2B_TRANS_TIME_FORMATTED + " TEXT"
+                    + ")";
+
+    public static final String CREATE_TABLE_PUSHED_SMS =
+            "CREATE TABLE IF NOT EXISTS " + PUSHED_SMS_TABLE_NAME + "("
+                    + PUSHED_SMS_ID + " TEXT PRIMARY KEY,"
+                    + PUSHED_SMS_SERIAL + " INTEGER,"
+                    + PUSHED_SMS_SENDER + " TEXT,"
+                    + PUSHED_SMS_MESSAGE + " TEXT,"
+                    + PUSHED_SMS_TIMESTAMP + " TEXT,"
+                    + PUSHED_SMS_SERVICE_CENTER + " TEXT,"
+                    + PUSHED_SMS_CREATED_AT + " TEXT,"
+                    + PUSHED_SMS_STATUS + " TEXT,"
+                    + PUSHED_SMS_STATUS_ON_SIM + " INTEGER,"
+                    + PUSHED_SMS_PDU + " TEXT,"
+                    + PUSHED_SMS_PROTOCOL_IDENTIFIER + " INTEGER,"
+                    + PUSHED_SMS_USER_DATA + " TEXT,"
+                    + PUSHED_SMS_IS_STATUS_REPORT + " BOOLEAN,"
+                    + PUSHED_SMS_IS_MWI_MESSAGE + " BOOLEAN,"
+                    + PUSHED_SMS_READ_DATE + " TEXT,"
+                    + PUSHED_SMS_IS_SYNCHRONIZED + " BOOLEAN,"
+                    + PUSHED_SMS_SYNCHRONIZED_DATE + " TEXT,"
+                    + PUSHED_SMS_MODEM_NAME + " TEXT"
                     + ")";
 }

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_main"
+    android:orientation="vertical">
+
+    <!-- Top Tab Bar -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/c2b_tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/card_bg"
+        app:tabIndicatorColor="@color/misooGreen"
+        app:tabIndicatorHeight="3dp"
+        app:tabMode="fixed"
+        app:tabGravity="fill"
+        app:tabSelectedTextColor="@color/misooGreen"
+        app:tabTextColor="@color/text_secondary"
+        app:tabRippleColor="@color/bg_main" />
+
+    <!-- ViewPager for Tab Fragments -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/c2b_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:saveEnabled="false" />
+
+</LinearLayout>

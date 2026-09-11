@@ -15,7 +15,6 @@ import com.google.android.material.tabs.TabLayout;
 
 import dotpesa_new_dec_2022.R;
 
-
 public class SettingsFragment extends Fragment {
 
     private TabLayout tabLayout;
@@ -25,36 +24,38 @@ public class SettingsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_settings, container, false);
-
-//        tabLayout = (TabLayout) findViewById(R.id.tablayout_settings);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-//        super.onViewCreated(view, savedInstanceState);
-        tabLayout = (TabLayout) getView().findViewById(R.id.tablayout_settings);
-        viewPager = (ViewPager) getView().findViewById(R.id.settings_viewpager);
-//        adapter = new ViewPagerAdapter(getActivity().getSupportFragmentManager());
+        tabLayout = view.findViewById(R.id.tablayout_settings);
+        viewPager = view.findViewById(R.id.settings_viewpager);
         adapter = new ViewPagerAdapter(getChildFragmentManager());
 
-        //add fragment here
-
+        // Add setting configuration fragments
+        adapter.AddFragment(new FragmentGeneralSettings(), "General & SMS Filter");
         adapter.AddFragment(new FragmentLicenseSettings(), "Device Licensing");
         adapter.AddFragment(new FragmentNeConfig(), "Network Configuration");
+        adapter.AddFragment(new FragmentNodeConfig(), "Node.js API");
 
         viewPager.setAdapter(adapter);
-//        viewPager.setOffscreenPageLimit(2);
+        viewPager.setOffscreenPageLimit(4);
         tabLayout.setupWithViewPager(viewPager);
 
-        tabLayout.getTabAt(0).setIcon(R.drawable.licensing_24);
-        tabLayout.getTabAt(1).setIcon(R.drawable.network_config_24);
+        if (tabLayout.getTabAt(0) != null) {
+            tabLayout.getTabAt(0).setIcon(R.drawable.inbox_24);
+        }
+        if (tabLayout.getTabAt(1) != null) {
+            tabLayout.getTabAt(1).setIcon(R.drawable.licensing_24);
+        }
+        if (tabLayout.getTabAt(2) != null) {
+            tabLayout.getTabAt(2).setIcon(R.drawable.network_config_24);
+        }
+        if (tabLayout.getTabAt(3) != null) {
+            tabLayout.getTabAt(3).setIcon(R.drawable.sync_24);
+        }
 
-        tabLayout.setSelectedTabIndicatorColor(Color.parseColor("#00c42d"));
-
-//        PagerTabStrip pagerTabStrip = (PagerTabStrip) getView().findViewById(R.id.viewpagerstrip);
-////        pagerTabStrip.setDrawFullUnderline(true);
-//        pagerTabStrip.setTabIndicatorColor(Color.RED);
+        tabLayout.setSelectedTabIndicatorColor(Color.parseColor("#00C853"));
     }
 }

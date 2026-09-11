@@ -4,7 +4,7 @@
     <string name="app_name">SMS Listener</string>
     <string name="login_page">Login to SMS Listener</string>
     <string name="login_inputs_password">Remember Me</string>
-    <string name="launcher_text">Powered by Misoo Limited</string>
+    <string name="launcher_text">Powered by Free Style Code technologies</string>
     <string name="getlicence_text">GET LICENCE KEY</string>
 
     <string name="device_licencing_card">Select Protocol</string>

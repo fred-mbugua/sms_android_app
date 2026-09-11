@@ -2,22 +2,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/calllogs"
-        android:title="Messages"
-        android:icon="@drawable/inbox_24"
-        />
+        android:title="SMS Inbox"
+        android:icon="@drawable/inbox_24" />
+    <item
+        android:id="@+id/c2b_transactions"
+        android:title="C2B Transactions"
+        android:icon="@drawable/sync_24" />
     <item
         android:id="@+id/help_center"
         android:title="Help Center"
-        android:icon="@drawable/help_center_24"
-        />
+        android:icon="@drawable/help_center_24" />
     <item
         android:id="@+id/settings"
         android:title="Settings"
-        android:icon="@drawable/settings_24"
-        />
+        android:icon="@drawable/settings_24" />
     <item
         android:id="@+id/logout"
         android:title="Logout"
         android:icon="@drawable/logout_24"/>
-
 </menu>
