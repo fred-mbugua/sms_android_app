@@ -144,7 +144,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Matched: 0"
-                        android:textColor="@color/misooGreen"
+                        android:textColor="@color/appPrimaryGreen"
                         android:textSize="13sp"
                         android:textStyle="bold" />
 
@@ -215,7 +215,7 @@
         <ImageView
             android:layout_width="140dp"
             android:layout_height="140dp"
-            android:src="@drawable/emptyinbox"
+            android:src="@drawable/ic_empty_inbox"
             android:contentDescription="No comparison data" />
 
         <TextView
@@ -239,7 +239,7 @@
         android:layout_alignParentBottom="true"
         android:layout_margin="20dp"
         android:src="@drawable/fab_refresh_24"
-        app:backgroundTint="@color/misooGreen"
+        app:backgroundTint="@color/appPrimaryGreen"
         app:tint="@color/white"
         app:elevation="6dp" />
 

@@ -24,8 +24,8 @@
             <ImageView
                 android:layout_width="72dp"
                 android:layout_height="72dp"
-                android:src="@drawable/dotpesalogo"
-                android:contentDescription="DotPesa Logo" />
+                android:src="@drawable/ic_payprint_logo"
+                android:contentDescription="PayPrint POS Logo" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
                 android:gravity="center"
-                android:text="DotPesa requires the following permissions to capture payment SMS messages, run background services, and sync with your ERP."
+                android:text="PayPrint POS requires the following permissions to capture payment SMS messages, connect to Bluetooth thermal printers, run background services, and sync with your server."
                 android:textColor="@color/text_secondary"
                 android:textSize="14sp" />
 
@@ -71,7 +71,7 @@
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
                     android:src="@drawable/inbox_24"
-                    app:tint="@color/misooGreen" />
+                    app:tint="@color/appPrimaryGreen" />
 
                 <TextView
                     android:id="@+id/badgeSms"
@@ -85,7 +85,7 @@
                     android:paddingTop="4dp"
                     android:paddingBottom="4dp"
                     android:text="REQUIRED"
-                    android:textColor="@color/misooRed"
+                    android:textColor="@color/appErrorRed"
                     android:textSize="11sp"
                     android:textStyle="bold" />
 
@@ -110,7 +110,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
-                        android:text="Detects incoming M-PESA &amp; bank payment SMS messages to sync with POS."
+                        android:text="Detects incoming payment SMS messages to print thermal receipts &amp; sync with POS."
                         android:textColor="@color/text_secondary"
                         android:textSize="13sp" />
 
@@ -143,7 +143,7 @@
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
                     android:src="@drawable/network_config_24"
-                    app:tint="@color/misooGreen" />
+                    app:tint="@color/appPrimaryGreen" />
 
                 <TextView
                     android:id="@+id/badgePhone"
@@ -157,7 +157,7 @@
                     android:paddingTop="4dp"
                     android:paddingBottom="4dp"
                     android:text="REQUIRED"
-                    android:textColor="@color/misooRed"
+                    android:textColor="@color/appErrorRed"
                     android:textSize="11sp"
                     android:textStyle="bold" />
 
@@ -215,7 +215,7 @@
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
                     android:src="@drawable/contact_support_24"
-                    app:tint="@color/misooGreen" />
+                    app:tint="@color/appPrimaryGreen" />
 
                 <TextView
                     android:id="@+id/badgeContacts"
@@ -229,7 +229,7 @@
                     android:paddingTop="4dp"
                     android:paddingBottom="4dp"
                     android:text="REQUIRED"
-                    android:textColor="@color/misooRed"
+                    android:textColor="@color/appErrorRed"
                     android:textSize="11sp"
                     android:textStyle="bold" />
 
@@ -288,7 +288,7 @@
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
                     android:src="@drawable/sync_24"
-                    app:tint="@color/misooGreen" />
+                    app:tint="@color/appPrimaryGreen" />
 
                 <TextView
                     android:id="@+id/badgeNotifications"
@@ -302,7 +302,7 @@
                     android:paddingTop="4dp"
                     android:paddingBottom="4dp"
                     android:text="REQUIRED"
-                    android:textColor="@color/misooRed"
+                    android:textColor="@color/appErrorRed"
                     android:textSize="11sp"
                     android:textStyle="bold" />
 
@@ -352,7 +352,7 @@
             android:textColor="@color/white"
             android:textSize="15sp"
             android:textStyle="bold"
-            app:backgroundTint="@color/misooGreen"
+            app:backgroundTint="@color/appPrimaryGreen"
             app:cornerRadius="12dp" />
 
         <!-- Open Settings Button -->
@@ -374,12 +374,12 @@
             android:layout_width="match_parent"
             android:layout_height="52dp"
             android:layout_marginTop="8dp"
-            android:text="Continue to DotPesa"
+            android:text="Continue to PayPrint POS"
             android:textColor="@color/white"
             android:textSize="15sp"
             android:textStyle="bold"
             android:visibility="gone"
-            app:backgroundTint="@color/misooGreen"
+            app:backgroundTint="@color/appPrimaryGreen"
             app:cornerRadius="12dp" />
 
     </LinearLayout>

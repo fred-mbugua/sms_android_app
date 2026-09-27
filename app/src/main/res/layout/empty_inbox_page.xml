@@ -2,8 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:id="@+id/emptyInbox"
@@ -18,23 +17,23 @@
 
         <ImageView
             android:id="@+id/emptyInboxImage"
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/emptyinbox"
-            />
+            android:src="@drawable/ic_empty_inbox"
+            android:contentDescription="Empty Inbox" />
 
         <TextView
             android:id="@+id/emptyInboxPageText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/emptyInbox"
             android:layout_gravity="center_horizontal"
-            android:text="No New Messages"
-            android:textColor="@color/misooGrey"
-            android:textSize="27sp" />
+            android:layout_marginTop="16dp"
+            android:text="No Messages Found"
+            android:textColor="@color/text_secondary"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-medium" />
 
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

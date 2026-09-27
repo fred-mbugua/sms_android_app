@@ -12,11 +12,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/card_bg"
-        app:tabIndicatorColor="@color/misooGreen"
+        app:tabIndicatorColor="@color/appPrimaryGreen"
         app:tabIndicatorHeight="3dp"
         app:tabMode="fixed"
         app:tabGravity="fill"
-        app:tabSelectedTextColor="@color/misooGreen"
+        app:tabSelectedTextColor="@color/appPrimaryGreen"
         app:tabTextColor="@color/text_secondary"
         app:tabRippleColor="@color/bg_main" />
 

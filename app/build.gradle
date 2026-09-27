@@ -3,6 +3,7 @@ plugins {
 }
 
 android {
+    namespace "com.payprint.pos"
     compileSdk 34
 
     packagingOptions {
@@ -22,7 +23,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.example.dotpesa_new_dec_2022"
+        applicationId "com.payprint.pos"
         minSdk 21
         targetSdk 34
         versionCode 1
@@ -58,7 +59,6 @@ dependencies {
     implementation 'com.google.firebase:firebase-crashlytics-buildtools:2.7.1'
      //to fix duplicate error, the below dependancy solves the issue
     implementation 'com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava'
-    implementation files('libs/MisooDynamicsFramework.jar')
     implementation group: 'org.apache.httpcomponents.client5' , name: 'httpclient5' , version: '5.0.3'
 //    implementation project(path: ':common')
 //    implementation 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'

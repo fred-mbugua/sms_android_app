@@ -1,13 +1,13 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.DotPesaNEW2" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.DotPesaNEW2" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/misooGreen</item>
-        <item name="colorPrimaryVariant">@color/misooGreenDark</item>
+        <item name="colorPrimary">@color/appPrimaryGreen</item>
+        <item name="colorPrimaryVariant">@color/appPrimaryDark</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/misooGreen</item>
-        <item name="colorSecondaryVariant">@color/misooGreenDark</item>
+        <item name="colorSecondary">@color/appPrimaryGreen</item>
+        <item name="colorSecondaryVariant">@color/appPrimaryDark</item>
         <item name="colorOnSecondary">@color/white</item>
 
         <!-- Background & Surface Colors -->
@@ -20,5 +20,21 @@
         <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
 
         <item name="android:windowContentTransitions">true</item>
+    </style>
+
+    <style name="Widget.App.BottomNavigationView" parent="Widget.Material3.BottomNavigationView">
+        <item name="itemActiveIndicatorStyle">@style/Widget.App.BottomNavigationView.ActiveIndicator</item>
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.BottomNavigationView</item>
+    </style>
+
+    <style name="ThemeOverlay.App.BottomNavigationView" parent="">
+        <item name="colorContainer">@color/nav_active_indicator</item>
+        <item name="colorOnContainer">@color/nav_icon_active</item>
+    </style>
+
+    <style name="Widget.App.BottomNavigationView.ActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/nav_active_indicator</item>
+        <item name="android:width">64dp</item>
+        <item name="android:height">32dp</item>
     </style>
 </resources>

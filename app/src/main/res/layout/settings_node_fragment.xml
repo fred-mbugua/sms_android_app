@@ -18,6 +18,28 @@
             android:orientation="vertical"
             android:padding="12dp">
 
+            <!-- Top Header Bar with Back Button -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="8dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_back_to_settings"
+                    style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Back to Settings"
+                    android:textColor="@color/appPrimaryGreen"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:icon="@drawable/ic_arrow_back_24"
+                    app:iconTint="@color/appPrimaryGreen" />
+
+            </LinearLayout>
+
             <!-- Card 1: Protocol & Host Configuration -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -37,7 +59,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Server Protocol &amp; Host"
-                        android:textColor="@color/misooGreen"
+                        android:textColor="@color/appPrimaryGreen"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
@@ -120,7 +142,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="SMS Dispatch &amp; Fetch Endpoints"
-                        android:textColor="@color/misooGreen"
+                        android:textColor="@color/appPrimaryGreen"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
@@ -210,7 +232,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Safaricom C2B Transactions API"
-                        android:textColor="@color/misooGreen"
+                        android:textColor="@color/appPrimaryGreen"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
@@ -240,7 +262,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:buttonTint="@color/misooGreen"
+                        android:buttonTint="@color/appPrimaryGreen"
                         android:text="Enable C2B Transactions Fetching"
                         android:textColor="@color/text_primary"
                         android:textSize="14sp" />
@@ -249,7 +271,86 @@
 
             </androidx.cardview.widget.CardView>
 
-            <!-- Card 4: Enable Node.js Sync Options -->
+            <!-- Card 4: Excel Import Upload & Fetch Endpoints -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                app:cardBackgroundColor="@color/card_bg"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Excel Workbook API Endpoints (Supabase)"
+                        android:textColor="@color/appPrimaryGreen"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Excel Upload Endpoint Path (App to Backend)"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp" />
+
+                    <EditText
+                        android:id="@+id/node_excel_upload_endpoint_path"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/shape_for_numberbox"
+                        android:hint="e.g. api/v1/excel/upload"
+                        android:inputType="text"
+                        android:padding="10dp"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_secondary"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Excel Fetch Endpoint Path (Backend to App)"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp" />
+
+                    <EditText
+                        android:id="@+id/node_excel_fetch_endpoint_path"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/shape_for_numberbox"
+                        android:hint="e.g. api/v1/excel/all"
+                        android:inputType="text"
+                        android:padding="10dp"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_secondary"
+                        android:textSize="14sp" />
+
+                    <CheckBox
+                        android:id="@+id/node_enable_excel_checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:buttonTint="@color/appPrimaryGreen"
+                        android:text="Enable Node.js Excel Upload &amp; Sync"
+                        android:textColor="@color/text_primary"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card 5: Enable Node.js Sync Options -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -268,7 +369,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Node.js Sync Settings"
-                        android:textColor="@color/misooGreen"
+                        android:textColor="@color/appPrimaryGreen"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
@@ -277,7 +378,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:buttonTint="@color/misooGreen"
+                        android:buttonTint="@color/appPrimaryGreen"
                         android:text="Enable Node.js API SMS Sync"
                         android:textColor="@color/text_primary"
                         android:textSize="14sp" />
@@ -299,7 +400,7 @@
                     android:layout_height="56dp"
                     android:layout_marginEnd="6dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/misooGreen"
+                    android:backgroundTint="@color/appPrimaryGreen"
                     android:text="SAVE CONFIG"
                     android:textColor="@color/white"
                     android:textSize="14sp"
@@ -312,7 +413,7 @@
                     android:layout_height="56dp"
                     android:layout_marginStart="6dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/misooGreen"
+                    android:backgroundTint="@color/appPrimaryGreen"
                     android:text="TEST &amp; SYNC NOW"
                     android:textColor="@color/white"
                     android:textSize="14sp"

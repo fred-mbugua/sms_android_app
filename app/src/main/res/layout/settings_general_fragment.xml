@@ -12,6 +12,206 @@
         android:orientation="vertical"
         android:padding="16dp">
 
+        <!-- Top Header Bar with Back Button -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="8dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_back_to_settings"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Back to Settings"
+                android:textColor="@color/appPrimaryGreen"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:icon="@drawable/ic_arrow_back_24"
+                app:iconTint="@color/appPrimaryGreen" />
+
+        </LinearLayout>
+
+        <!-- Change Password Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            app:strokeColor="@color/divider_color"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Settings Security &amp; Password"
+                    android:textColor="@color/appPrimaryGreen"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Change the password used to access application settings."
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edit_current_password_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:hint="Current Settings Password"
+                    app:boxBackgroundColor="@color/card_bg"
+                    app:boxStrokeColor="@color/appPrimaryGreen"
+                    app:hintTextColor="@color/appPrimaryGreen"
+                    app:passwordToggleEnabled="true"
+                    app:boxCornerRadiusTopStart="8dp"
+                    app:boxCornerRadiusTopEnd="8dp"
+                    app:boxCornerRadiusBottomStart="8dp"
+                    app:boxCornerRadiusBottomEnd="8dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_current_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_primary"
+                        android:inputType="textPassword" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edit_new_password_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:hint="New Settings Password"
+                    app:boxBackgroundColor="@color/card_bg"
+                    app:boxStrokeColor="@color/appPrimaryGreen"
+                    app:hintTextColor="@color/appPrimaryGreen"
+                    app:passwordToggleEnabled="true"
+                    app:boxCornerRadiusTopStart="8dp"
+                    app:boxCornerRadiusTopEnd="8dp"
+                    app:boxCornerRadiusBottomStart="8dp"
+                    app:boxCornerRadiusBottomEnd="8dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_new_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_primary"
+                        android:inputType="textPassword" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edit_confirm_new_password_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:hint="Confirm New Settings Password"
+                    app:boxBackgroundColor="@color/card_bg"
+                    app:boxStrokeColor="@color/appPrimaryGreen"
+                    app:hintTextColor="@color/appPrimaryGreen"
+                    app:passwordToggleEnabled="true"
+                    app:boxCornerRadiusTopStart="8dp"
+                    app:boxCornerRadiusTopEnd="8dp"
+                    app:boxCornerRadiusBottomStart="8dp"
+                    app:boxCornerRadiusBottomEnd="8dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_confirm_new_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_primary"
+                        android:inputType="textPassword" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_change_password"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="14dp"
+                    android:text="Update Settings Password"
+                    android:textColor="@color/appPrimaryGreen"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="8dp"
+                    app:strokeColor="@color/appPrimaryGreen" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Bottom Navigation Toggle Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            app:strokeColor="@color/divider_color"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bottom Navigation Tabs"
+                    android:textColor="@color/appPrimaryGreen"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Configure which tabs appear in the main bottom navigation bar."
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp" />
+
+                <CheckBox
+                    android:id="@+id/cbShowSmsInboxNav"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:buttonTint="@color/appPrimaryGreen"
+                    android:text="Show Raw Device SMS Inbox Tab"
+                    android:textColor="@color/text_primary"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:text="When enabled, adds an 'SMS Inbox' tab to the bottom navigation bar to view raw device inbox messages."
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
         <!-- Header Card -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
@@ -33,7 +233,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="SMS Message Filtering"
-                    android:textColor="@color/misooGreen"
+                    android:textColor="@color/appPrimaryGreen"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -41,7 +241,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="Choose which incoming SMS messages DotPesa should capture, process, and display."
+                    android:text="Choose which incoming SMS messages PayPrint POS should capture, process, and display."
                     android:textColor="@color/text_secondary"
                     android:textSize="13sp" />
 
@@ -149,7 +349,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="2dp"
-                    android:text="Check providers you wish to capture in DotPesa:"
+                    android:text="Check providers you wish to capture in PayPrint POS:"
                     android:textColor="@color/text_secondary"
                     android:textSize="12sp" />
 
@@ -234,11 +434,11 @@
             android:id="@+id/btnSaveGeneralSettings"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="Save Filtering Settings"
+            android:text="Save General Settings"
             android:textColor="@color/white"
             android:textSize="15sp"
             android:textStyle="bold"
-            app:backgroundTint="@color/misooGreen"
+            app:backgroundTint="@color/appPrimaryGreen"
             app:cornerRadius="12dp" />
 
     </LinearLayout>

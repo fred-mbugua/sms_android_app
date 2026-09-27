@@ -76,10 +76,10 @@
         android:background="@color/card_bg"
         app:elevation="4dp"
         app:tabGravity="fill"
-        app:tabIndicatorColor="@color/misooGreen"
+        app:tabIndicatorColor="@color/appPrimaryGreen"
         app:tabIndicatorHeight="3dp"
         app:tabMode="fixed"
-        app:tabSelectedTextColor="@color/misooGreen"
+        app:tabSelectedTextColor="@color/appPrimaryGreen"
         app:tabTextColor="@color/text_secondary" />
 
     <androidx.viewpager.widget.ViewPager

@@ -148,7 +148,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Total: KES 0.00"
-                    android:textColor="@color/misooGreen"
+                    android:textColor="@color/appPrimaryGreen"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -156,7 +156,7 @@
 
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Action Toolbar: Import Excel, Export Excel, Export PDF -->
+        <!-- Action Toolbar: Export Excel, Export PDF -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -164,31 +164,16 @@
             android:orientation="horizontal">
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/cloud_c2b_btn_import_excel"
+                android:id="@+id/cloud_c2b_btn_export_excel"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="0dp"
                 android:layout_height="38dp"
                 android:layout_weight="1"
                 android:layout_marginEnd="4dp"
                 android:padding="0dp"
-                android:text="Import Excel"
-                android:textColor="@color/misooGreen"
-                android:textSize="11sp"
-                app:cornerRadius="8dp"
-                app:strokeColor="@color/misooGreen" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/cloud_c2b_btn_export_excel"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="0dp"
-                android:layout_height="38dp"
-                android:layout_weight="1"
-                android:layout_marginStart="2dp"
-                android:layout_marginEnd="2dp"
-                android:padding="0dp"
                 android:text="Export Excel"
                 android:textColor="@color/text_primary"
-                android:textSize="11sp"
+                android:textSize="12sp"
                 app:cornerRadius="8dp"
                 app:strokeColor="@color/divider_color" />
 
@@ -201,10 +186,10 @@
                 android:layout_marginStart="4dp"
                 android:padding="0dp"
                 android:text="Export PDF"
-                android:textColor="@color/misooRed"
-                android:textSize="11sp"
+                android:textColor="@color/appErrorRed"
+                android:textSize="12sp"
                 app:cornerRadius="8dp"
-                app:strokeColor="@color/misooRed" />
+                app:strokeColor="@color/appErrorRed" />
 
         </LinearLayout>
 
@@ -235,7 +220,7 @@
         <ImageView
             android:layout_width="140dp"
             android:layout_height="140dp"
-            android:src="@drawable/emptyinbox"
+            android:src="@drawable/ic_empty_inbox"
             android:contentDescription="No transactions" />
 
         <TextView
@@ -259,7 +244,7 @@
         android:layout_alignParentBottom="true"
         android:layout_margin="20dp"
         android:src="@drawable/fab_refresh_24"
-        app:backgroundTint="@color/misooGreen"
+        app:backgroundTint="@color/appPrimaryGreen"
         app:tint="@color/white"
         app:elevation="6dp" />
 

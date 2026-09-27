@@ -1,18 +1,18 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <string name="my_app_name">SMS Listener</string>
-    <string name="app_name">SMS Listener</string>
-    <string name="login_page">Login to SMS Listener</string>
+    <string name="my_app_name">PayPrint POS</string>
+    <string name="app_name">PayPrint POS</string>
+    <string name="login_page">Login to PayPrint POS</string>
     <string name="login_inputs_password">Remember Me</string>
-    <string name="launcher_text">Powered by Free Style Code technologies</string>
-    <string name="getlicence_text">GET LICENCE KEY</string>
+    <string name="launcher_text">PayPrint POS Systems</string>
+    <string name="getlicence_text">GET API KEY</string>
 
     <string name="device_licencing_card">Select Protocol</string>
     <string name="url_protocal_card">Enter URL Protocol</string>
     <string name="get_host_ip_number_text">Enter Host IP/Domain</string>
-    <string name="get_deviceappliancenumber_text">GET APPLIANCE NUMBER</string>
-    <string name="device_appliance_number_card">Device Appliance Number</string>
-    <string name="print_incoming_sms">Print Incoming SMS</string>
+    <string name="get_deviceappliancenumber_text">GET SERVER KEY</string>
+    <string name="device_appliance_number_card">Device API Identifier</string>
+    <string name="print_incoming_sms">Auto-Print Incoming SMS</string>
 
     <string name="hello_blank_fragment">Blank Fragment</string>
 

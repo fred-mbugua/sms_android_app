@@ -31,7 +31,7 @@
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/emptyinbox"
+            android:src="@drawable/ic_empty_inbox"
             android:contentDescription="Empty Inbox" />
 
         <TextView

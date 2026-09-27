@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -31,8 +32,8 @@
                 android:id="@+id/messageAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/misooGreen"
-                android:textSize="18sp"
+                android:textColor="@color/appPrimaryGreen"
+                android:textSize="17sp"
                 android:textStyle="bold"
                 android:fontFamily="sans-serif-medium" />
 
@@ -41,18 +42,44 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/text_primary"
-                android:textSize="15sp"
+                android:textSize="14sp"
                 android:layout_marginTop="6dp"
                 android:lineSpacingExtra="2dp" />
 
-            <TextView
-                android:id="@+id/messageDateTime"
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/text_secondary"
-                android:textSize="12sp"
-                android:layout_marginTop="8dp"
-                android:fontFamily="sans-serif" />
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:id="@+id/messageDateTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp"
+                    android:fontFamily="sans-serif" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_print_sms"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:layout_alignParentEnd="true"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingTop="0dp"
+                    android:paddingBottom="0dp"
+                    android:text="Print Receipt"
+                    android:textColor="@color/appPrimaryGreen"
+                    android:textSize="11sp"
+                    app:cornerRadius="6dp"
+                    app:strokeColor="@color/appPrimaryGreen"
+                    app:strokeWidth="1dp" />
+
+            </RelativeLayout>
+
         </LinearLayout>
     </LinearLayout>
 

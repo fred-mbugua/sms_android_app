@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_main"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Top Header Bar with Back Button -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="8dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_back_to_settings_docs"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Back to Settings"
+                android:textColor="@color/appPrimaryGreen"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:icon="@drawable/ic_arrow_back_24"
+                app:iconTint="@color/appPrimaryGreen" />
+
+        </LinearLayout>
+
+        <!-- Header Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="3dp"
+            app:strokeColor="@color/divider_color"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Developer &amp; Integration Guide"
+                    android:textColor="@color/appPrimaryGreen"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Comprehensive guide for connecting 3rd-party ERP systems, Node.js, and web applications to PayPrint POS."
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- System Architecture & End-to-End Workflow Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            app:strokeColor="@color/divider_color"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1. End-to-End System Workflow"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:lineSpacingExtra="3dp"
+                    android:text="PayPrint POS connects mobile payment networks, Bluetooth thermal printers, and cloud servers into a unified POS system:\n\n1. Payment Arrival: Device receives mobile payment SMS (M-PESA, Bank SMS).\n2. Local Parsing &amp; Database: PayPrint POS parses code, sender, amount, and timestamp into local SQLite.\n3. Automatic Thermal Printing: The app immediately formats and prints a receipt voucher on the connected Bluetooth thermal printer (if Auto-Print is enabled).\n4. Real-Time API Dispatch: The app sends a JSON payload to your server endpoint.\n5. Offline Queueing: If device is offline, payloads are queued locally and automatically retried when internet restores."
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- API Endpoints Configuration Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            app:strokeColor="@color/divider_color"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2. Configurable API Endpoints"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Configure these endpoints in Settings -> Node.js API Settings:"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="A. Push Incoming SMS (POST)"
+                    android:textColor="@color/appPrimaryGreen"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="Default Endpoint: /api/v1/sms/receive\nMethod: POST\nDescription: PayPrint POS sends real-time incoming SMS payment payloads to your backend server."
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="B. Fetch Historical SMS (GET)"
+                    android:textColor="@color/appPrimaryGreen"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="Default Endpoint: /api/v1/sms/all\nMethod: GET\nDescription: PayPrint POS pulls historical SMS transactions from your server into the app."
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="C. Fetch C2B API Transactions (GET)"
+                    android:textColor="@color/appPrimaryGreen"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="Default Endpoint: /transactions\nMethod: GET\nDescription: PayPrint POS fetches C2B M-PESA paybill transactions from your backend or Daraja gateway."
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="D. Authentication Headers"
+                    android:textColor="@color/appPrimaryGreen"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="Requests include these headers if an API Key is configured:\n• Authorization: Bearer &lt;YOUR_API_KEY&gt;\n• x-api-key: &lt;YOUR_API_KEY&gt;\n• Content-Type: application/json"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Message Payload Structures Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            app:strokeColor="@color/divider_color"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3. JSON Payload Schemas"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Payload A: Incoming SMS Push (Dispatched to Server)"
+                    android:textColor="@color/appPrimaryGreen"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/border_radius"
+                    android:fontFamily="monospace"
+                    android:padding="10dp"
+                    android:text="{\n  &quot;SMSID&quot;: &quot;104&quot;,\n  &quot;senderMobilePhoneNumber&quot;: &quot;MPESA&quot;,\n  &quot;SMSMessage&quot;: &quot;QAB1234567 Confirmed. Ksh1,500.00 received...&quot;,\n  &quot;SMSSentDate&quot;: &quot;2025-02-21 15:30:00&quot;,\n  &quot;SMSReceivedDate&quot;: &quot;2025-02-21 15:30:05&quot;,\n  &quot;SMSCNumber&quot;: &quot;+254722000000&quot;,\n  &quot;SMSModemName&quot;: &quot;Sim1_Safaricom&quot;,\n  &quot;SMSMessageType&quot;: &quot;Normal&quot;\n}"
+                    android:textColor="@color/text_primary"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="Payload B: Fetch SMS Response (Returned by Server)"
+                    android:textColor="@color/appPrimaryGreen"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/border_radius"
+                    android:fontFamily="monospace"
+                    android:padding="10dp"
+                    android:text="[\n  {\n    &quot;id&quot;: &quot;sms_1001&quot;,\n    &quot;sender&quot;: &quot;MPESA&quot;,\n    &quot;message&quot;: &quot;QAB1234567 Confirmed. Ksh1,500.00 received...&quot;,\n    &quot;timestamp&quot;: &quot;2025-02-21 15:30:00&quot;,\n    &quot;created_at&quot;: &quot;2025-02-21 15:30:05&quot;,\n    &quot;account_name&quot;: &quot;JOHN DOE&quot;\n  }\n]"
+                    android:textColor="@color/text_primary"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="Payload C: C2B Transactions Response (Returned by Server)"
+                    android:textColor="@color/appPrimaryGreen"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/border_radius"
+                    android:fontFamily="monospace"
+                    android:padding="10dp"
+                    android:text="[\n  {\n    &quot;id&quot;: &quot;c2b_5001&quot;,\n    &quot;trans_id&quot;: &quot;QAB1234567&quot;,\n    &quot;bill_ref_number&quot;: &quot;ACC8648&quot;,\n    &quot;first_name&quot;: &quot;JOHN&quot;,\n    &quot;last_name&quot;: &quot;DOE&quot;,\n    &quot;msisdn&quot;: &quot;254712345678&quot;,\n    &quot;amount&quot;: 1500.00,\n    &quot;business_shortcode&quot;: &quot;600100&quot;,\n    &quot;trans_time&quot;: &quot;20250221153000&quot;\n  }\n]"
+                    android:textColor="@color/text_primary"
+                    android:textSize="11sp" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Thermal Printing Details Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            app:strokeColor="@color/divider_color"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4. Thermal Printer Customization"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:lineSpacingExtra="3dp"
+                    android:text="PayPrint POS formats thermal receipts using standard ESC/POS commands (ESC @, ESC a, ESC !, GS V):\n\n• Paper Sizes: Supports 58mm and 80mm thermal rolls.\n• Auto-Print Switch: Enable in Payments -&gt; Bluetooth Printer tab for automatic printing upon SMS arrival.\n• Manual Reprinting: Tap 'Print Receipt' on any message item in the SMS Inbox or SMS Messages tab.\n• Custom Header/Footer: Configure store name, business registration number, and thank-you notes in printer settings."
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</ScrollView>

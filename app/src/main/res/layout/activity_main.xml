@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg_main"
-    tools:context="com.example.dotpesa_new_dec_2022.MainActivity">
+    tools:context="com.payprint.pos.MainActivity">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="180dp"
         android:layout_height="180dp"
-        android:src="@drawable/dotpesalogo8png"
+        android:src="@drawable/ic_payprint_logo"
         android:transitionName="splashscrnimage"
         app:layout_constraintBottom_toTopOf="@+id/launcherTextView"
         app:layout_constraintEnd_toEndOf="parent"
